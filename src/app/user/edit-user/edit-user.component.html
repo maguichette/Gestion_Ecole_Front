@@ -1,0 +1,52 @@
+<app-header></app-header>
+{{onUpdate.value|json}}
+<div class="container">
+  <h1>Edit User</h1>
+  <form #onUpdate="ngForm">
+    <fieldset>
+
+
+      <div class="form-group" >
+        <label for="nom">Entrez votre nom</label>
+        <input type="text" class="form-control" id="prenom" name="prenom" ngModel >
+      </div>
+
+      <div class="form-group">
+        <label for="nom">Entrez votre nom</label>
+        <input type="text" class="form-control" id="nom" name="nom" ngModel >
+      </div>
+
+      <div class="form-group">
+        <label for="email">Entrez votre mail</label>
+        <input type="email" class="form-control" id="email" name="email" ngModel >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Entrez votre Password</label>
+        <input type="password" class="form-control" id="password" name="password" ngModel>
+      </div>
+
+      <!--<div class="form-group">
+        <label for="password">Confirmer votre Password</label>
+        <input type="password" class="form-control" id="Cpassword" >
+      </div>-->
+
+      <div class="form-group">
+        <label for="selection">Selectioner le profil</label>
+        <select id="selection" class="form-control" name="selection" ngModel>
+          <option value="">Profil</option>
+                     <option value="">Admin</option>
+            <option value="">Apprenant</option>
+            <option value="">CM</option>
+            <option value="">Formateur</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fichier">Avatar</label>
+        <input type="file" class="form-control-file" id="fichier" name="fichier" ngModel>
+      </div>
+
+      <button (click)="update(onUpdate)" style="background-color: #1BA693" class="" type="submit">Enregistrer</button>
+    </fieldset>
+  </form>
+</div>

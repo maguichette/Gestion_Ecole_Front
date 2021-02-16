@@ -1,0 +1,13 @@
+
+<div class="container">
+  <h5>Editer profil</h5>
+   <form #onUpdate="ngForm">
+    <div class="row mb-3">
+      <div class="col">
+        <input id="libelle" type="text" class="form-control" name="libelle" placeholder="editer profil" ngModel required>
+      </div>
+    </div>
+    <button (click)="update(onUpdate)" style="background-color: #1BA693" class="" type="submit">Enregistrer</button>
+  </form>
+</div>
+

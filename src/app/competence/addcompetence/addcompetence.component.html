@@ -1,0 +1,240 @@
+<!--
+<app-header></app-header>
+<div class="card-header text-center shadow-lg mt-5"
+>
+  <h1 style="color: #008e8e">Creer Compétences</h1></div>
+
+<form (ngSubmit)="addCompetence()" [formGroup]="postedcompetence">
+<section class="container mb-4 mt-4 shadow-lg ">
+  <div class="container mb-5 mt-4">
+    &lt;!&ndash; Grid row &ndash;&gt;
+    <div class="row  shadow-lg ">
+
+      &lt;!&ndash; Grid column &ndash;&gt;
+      <div class=" col-lg-6 col-md-12 shadow-lg "style="max-width: 40rem">
+
+        &lt;!&ndash; Featured news &ndash;&gt;
+        <div class="single-news mb-4">
+
+          <div class="form-group ml-4">
+            <div> <h2> Groupe Competence</h2>
+              <select #selectElement
+                      name="competence"
+                      id="competence" class="form-control shadow-lg ">
+                <option  *ngFor="let item of groupeCompetence" value="{{item.id}}">{{item.libelle}}</option>
+
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="inputAddress" class="font-weight-bold  mt-3">Libellé</label>
+              <input type="text" class="form-control" id="inputAddress" [(ngModel)]="nomCompetence"
+                     formControlName="nomCompetence" placeholder=" libelle" autofocus>
+
+
+            </div>
+
+            <div class="form-group">
+              <label for="inputAddress" class="font-weight-bold  mt-3">Description</label>
+              <input type="text" class="form-control" id="inputdes" [(ngModel)]="description"
+                     formControlName="description" placeholder=" description" autofocus>
+
+
+
+            </div>
+           &lt;!&ndash; <select #selectElement (change)="chargecompetence(selectElement.value)"
+                    name="competence"
+                    id="competence" class="form-control shadow-lg ">
+              <option  ></option>
+
+            </select>&ndash;&gt;
+
+
+          </div>
+
+        </div>
+        &lt;!&ndash; Featured news &ndash;&gt;
+
+      </div>
+      &lt;!&ndash;**********Grid column *******&ndash;&gt;
+
+      &lt;!&ndash; Grid column &ndash;&gt;
+      <div class="col-lg-6 col-md-12 ">
+
+        &lt;!&ndash; Featured news &ndash;&gt;
+        <div class="single-news mb-4">
+
+
+          <div class="form-group">
+            <div class="shadow-lg">
+              <div class="card  shadow-lg mb-3 " style="max-width: 50rem;">
+                <div class="card-body">
+
+                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" >
+                    <li class="nav-item" >
+                      <a class="nav-link active"
+                         id="pills-home-tab"
+                         data-toggle="pill" href="#pills-home"
+                         role="tab" aria-controls="pills-home"
+                         aria-selected="true">Niveau1</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link"
+                         id="pills-profile-tab"
+                         data-toggle="pill" href="#pills-profile"
+                         role="tab" aria-controls="pills-profile"
+                         aria-selected="false">Niveau2</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link"
+                         id="pills-contact-tab"
+                         data-toggle="pill" href="#pills-contact"
+                         role="tab" aria-controls="pills-contact"
+                         aria-selected="false">Niveau3</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content " id="pills-tabContent" >
+                    <div class="tab-pane fade show active"
+                         id="pills-home"
+                         role="tabpanel"
+                         aria-labelledby="pills-home-tab">
+                      <div class="row">
+                        <div class=" card col-6 border">
+                          <div class="card-title "style="color: #008e8e">
+                            <h5> Groupe daction </h5>
+                            <input type="text" formControlName = "groupedAction1" [(ngModel)] = "groupedAction1" >
+                          </div>
+                          <p></p>
+                        </div>
+                        <div class="col-6 border">
+                          <div class="card-title "style="color: #008e8e">
+                            <h5> Critére d'evaluation </h5>
+                          </div>
+                          <input type="text" formControlName = "critereDevaluation1" [(ngModel)] = "critereDevaluation1" >
+                        </div>
+                      </div></div>&lt;!&ndash; fin tab 1 &ndash;&gt;
+
+                    <div class="tab-pane fade"
+                         id="pills-profile"
+                         role="tabpanel"
+                         aria-labelledby="pills-profile-tab">
+                      <div class="row">
+                        <div class=" card col-6 border">
+                          <div class="card-title "style="color: #008e8e">
+                            <h5> Groupe daction  </h5>
+                          </div>
+                          <input type="text" formControlName = "groupedAction2" [(ngModel)] = "groupedAction2" >
+                        </div>
+                        <div class="card col-6 border">
+                          <div class="card-title "style="color: #008e8e">
+                            <h5> Critére d'evaluation </h5>
+                          </div>
+                          <input type="text" formControlName = "critereDevaluation2" [(ngModel)] = "critereDevaluation2" >
+                        </div>
+                      </div></div>&lt;!&ndash; fin tab 2 &ndash;&gt;
+
+                    <div class="tab-pane fade"
+                         id="pills-contact" role="tabpanel"
+                         aria-labelledby="pills-contact-tab">
+                      <div class="row">
+                        <div class="card col-6 border">
+                          <div class="card-title "style="color: #008e8e">
+                            <h5> Groupe daction  </h5>
+                          </div>
+                          <input type="text" formControlName = "groupedAction3" [(ngModel)] = "groupedAction3" >
+                        </div>
+                        <div class="card col-6 border">
+                          <div class="card-title "style="color: #008e8e">
+                            <h5> Critére d'evaluation </h5>
+                          </div>
+                          <input type="text" formControlName = "critereDevaluation3" [(ngModel)] = "critereDevaluation3" >
+                        </div>
+                      </div></div> &lt;!&ndash; fin tab 3 &ndash;&gt;
+
+                  </div>
+                  <button class="btn btn-outline-info "
+                          routerLinkActive="active"
+                          style="margin: 1%" routerLink="/addcompetence">Enregistrer </button>
+                  &lt;!&ndash;Section: Magazine v.1&ndash;&gt;
+                  &lt;!&ndash; fin tab-containt &ndash;&gt;
+
+                </div>
+                &lt;!&ndash; fin card body &ndash;&gt;
+              </div> &lt;!&ndash; fin card niveaux &ndash;&gt;
+            </div>
+            &lt;!&ndash; fin shadow-lg &ndash;&gt;
+          </div>&lt;!&ndash; fin form group &ndash;&gt;
+        </div>
+        &lt;!&ndash; Featured news &ndash;&gt;
+
+      </div>
+      &lt;!&ndash; Grid column &ndash;&gt;
+
+    </div>
+    &lt;!&ndash; Grid row &ndash;&gt;
+  </div> &lt;!&ndash; Grid container &ndash;&gt;
+</section>
+&lt;!&ndash;/Section: Magazine v.1&ndash;&gt;
+  </form>
+
+<div class="card-header text-center shadow-lg mt-5"
+     style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
+  <h3>Creation Compétence</h3></div>
+
+{{formCompetence.value | json}}
+ Grid container -->
+<div class="container  ">
+  <div class="row  justify-content-center rounded shadow-lg mt-5 mb-5">
+    {{formCompetence.value | json}}
+    <form [formGroup]="formCompetence" (ngSubmit)="onSubmit()">
+      <div class=" card-body mt-5  shadow-lg  rounded">
+        <div class="form-group row">
+          <label  class="col-md-2 col-form-label text-md-right"><h2>Groupe Competence</h2></label>
+          <div class="col-md-12">
+
+
+            <angular2-multiselect class=" form-control shadow-lg col-md-12"
+                                  [data]="groupeCompetence" [(ngModel)]="selectedItems"
+                                  [settings]="dropdownSettings"
+                                  [formControlName]="'groupeCompetence'" >
+            </angular2-multiselect></div></div>
+        <div class="form-group row">
+          <label  class="col-md-2 col-form-label text-md-right"><h2>Libelle</h2></label>
+          <div class="col-md-12">
+            <input type="text"
+                   id="libelle"
+                   class="form-control shadow-lg"
+                   name="libelle"
+                   required autofocus
+                   placeholder="libelle"
+                   [formControlName]="'libelle'"></div></div>
+        <div class="form-group row">
+          <label  class="col-md-2 col-form-label text-md-right"><h2>Description</h2></label>
+          <div class="col-md-12">
+           <textarea class="form-control shadow-lg col-md-12 col-form-label "
+                     id="description"
+                     rows="3"
+                     name="description"
+                     [formControlName]="'descripton'"></textarea></div></div>
+        <!-- **********************************************************************-->
+        <div
+          [formArrayName]="'niveau'"
+          *ngFor="let niveau of getNiveauxFormGroups().controls; let i = index;">
+          <div class="card card-body shadow-lg">
+            <div [formGroupName]="i">
+              <label><h2>Niveau {{i+1}}</h2></label>
+              <input class="form-control shadow-lg" [formControlName]="'libelle'" placeholder="libelle">
+              <input  class="form-control mt-2 shadow-lg" [formControlName]="'groupe_actions'" placeholder="GroupeDaction">
+              <input class="form-control mt-2 shadow-lg" [formControlName]="'critere_evaluation'" placeholder="CritereEvaluation">
+            </div></div>
+        </div>
+
+
+        <div class="form-group mt-4">
+          <button class="btn btn-outline-danger" >Enregistrer</button></div>
+      </div>
+    </form>
+  </div><!-- Grid row -->
+</div> <!-- Grid container -->
+
+-->

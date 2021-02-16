@@ -1,0 +1,13 @@
+
+ <form (ngSubmit)="adProfil()" [formGroup]="formGroup">
+      <div class="row mb-3">
+        <div class="col">
+          <input type="text" class="form-control" formControlName="libelle" name="libelle" [(ngModel)]="libelle" placeholder="ajouter profil">
+        </div>
+      </div>
+      <div class="alert alert-danger" *ngIf="profilExist">
+        <strong>Error</strong> le profil exist
+      </div>
+      <button style="background-color: #1BA693" class="" type="submit">Enregistrer</button>
+    </form>
+

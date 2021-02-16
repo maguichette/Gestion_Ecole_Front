@@ -1,0 +1,60 @@
+<app-header></app-header>
+<div class="container">
+   <h1>Ajouter User</h1>
+  <form [formGroup]="userForm" (ngSubmit)="onAdduser()">
+    <fieldset>
+
+
+      <div class="form-group">
+        <label >Entrez votre Prenom</label>
+        <input [formControlName]="'prenom'" type="text" class="form-control" id="prenom" name="prenom " ngModel >
+        <small *ngIf="userForm.get('prenom').invalid && userForm.get('prenom').touched" class="text-danger">Entrer un prenom svp</small>
+      </div>
+
+      <div class="form-group">
+        <label for="nom">Entrez votre nom</label>
+        <input [formControlName]="'nom'" type="text" class="form-control" id="nom" name="nom">
+        <small *ngIf="userForm.get('nom').invalid && userForm.get('nom').touched" class="text-danger">Entrer un nom svp</small>
+      </div>
+
+       <div class="form-group">
+         <label for="email">Entrez votre mail</label>
+         <input [formControlName]="'email'" type="email" class="form-control" id="email" name="email">
+         <small *ngIf="userForm.get('email').invalid && userForm.get('email').touched" class="text-danger">Entrer un email svp</small>
+       </div>
+
+       <div class="form-group">
+         <label for="password">Entrez votre Password</label>
+         <input [formControlName]="'password'" type="password" class="form-control" id="password" name="password" >
+         <small *ngIf="userForm.get('password').invalid && userForm.get('password').touched" class="text-danger">Entrer un password svp</small>
+       </div>
+
+       <div class="form-group">
+         <label for="password">Confirmer votre Password</label>
+         <input [formControlName]="'confirmepassword'" type="password" class="form-control" id="Cpassword" >
+         <small *ngIf="userForm.get('confirmepassword').invalid && userForm.get('confirmepassword').touched" class="text-danger">confirmer le password svp</small>
+       </div>
+
+       <div class="form-group">
+         <label for="selection">Selectioner le profil</label>
+         <select [formControlName]="'profil'" id="selection" class="form-control">
+           <option value="">profil</option>
+           <optgroup label="">
+             <option value="Admin">Admin</option>
+
+             <option value="Cm">Cm</option>
+             <option  value="Formateur">Formateur</option>
+           </optgroup>
+
+         </select>
+         <small *ngIf="userForm.get('profil').invalid && userForm.get('profil').touched" class="text-danger">Entrer un profil svp</small>
+       </div>
+       <div class="form-group">
+         <label for="fichier">Avatar</label>
+         <input [formControlName]="'avatar'" (change)="onchangefil($event)" type="file" class="form-control-file" id="fichier">
+         <small *ngIf="userForm.get('avatar').invalid && userForm.get('avatar').touched" class="text-danger">Entrer un avatar svp</small>
+       </div>
+      <button  style="background-color: #1BA693" class="" type="submit">Enregistrer</button>
+    </fieldset>
+  </form>
+</div>

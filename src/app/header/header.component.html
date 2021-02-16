@@ -1,0 +1,57 @@
+
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+  <img src="./assets/image/logoSA.png" alt="">
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+   <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+    <form class="navbar-form form-inline">
+      <div class="input-group search-box">
+        <input type="text" id="search" class="form-control" placeholder="Search here...">
+        <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+      </div>
+    </form>
+    <div class="navbar-nav ml-auto">
+      <a href="#" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
+      <a href="#"  data-toggle="dropdown" id="dropdownMenuButton" class="nav-item nav-link dropdown-toggle user-action" ><i class="fa fa-gears"></i><span>Paramettre</span></a>
+
+      <div class="dropdown">
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a routerLink="/listpromo" class="dropdown-item" href="#">Promo</a>
+                  <a routerLink="/listreference" class="dropdown-item" href="#">Referentiel</a>
+                  <a routerLink="/listcompetence" class="dropdown-item" href="#">Competence</a>
+                  <a routerLink="/listgroupecomp" class="dropdown-item" href="#">Groupe Competence</a>
+                  <a routerLink="/listuser" class="dropdown-item" href="#">User</a>
+                  <a routerLink="/listprofilsortie" class="dropdown-item" href="#">Profil Sortie</a>
+                  <a routerLink="/listprofil" class="dropdown-item" href="#">Profil</a>
+                </div>
+              </div>
+      <div class="drop mt-3">
+      <a href="#" data-toggle="dropdown" id="dropdownMenuButton2" class="nav-item nav-link dropdown-toggle user-action">
+        <i class="fa fa-users"></i>
+        <span>User</span></a>
+
+                <div class="dropdown">
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                    <a routerLink="/listuser" class="dropdown-item" href="#">user</a>
+                    <a routerLink="/listprofil" class="dropdown-item" href="#">Profil</a>
+
+                  </div>
+                </div>
+      </div>
+
+      <div class="nav-item dropdown">
+        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action">
+          <img src="data:image/jpg;base64,{{user.avatar}}" class="avatar" alt="Avatar">{{user.email}}
+          <b class="caret"></b></a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+          <a  (click)="deconect()" href="#" class="dropdown-item"><i class="material-icons"></i> Deconexion</a>
+
+            </div>
+      </div>
+    </div>
+  </div>
+</nav>

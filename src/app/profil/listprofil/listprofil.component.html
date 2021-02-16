@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="container">
+<h1>Lister Profil</h1>
+<hr>
+
+<div class="mb-4">
+ <router-outlet></router-outlet>
+  </div>
+  <button  routerLink="/listprofil/addprofil" type="button" class="btn btn-success" style="background-color: #1BA693">Ajouter Profil</button>
+
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">LIBELLE</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let profil of profils">
+    <tr>
+      <td>{{ profil.id }}</td>
+      <td> {{ profil.libelle }} </td>
+      <td>
+
+        <button  routerLink="/listprofil/editprofil/{{profil.id}}" style="background-color: #1BA693" class="btn btn-primary mr-2">update</button>
+
+        <button (click)="redirectToDelete(profil.id)" class="btn btn-danger mr-2">Delete</button>
+     </td>
+    </tr>
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<h1>Liste Groupe Competence </h1>
+
+
+<div class="container "  >
+  <div class="row" >
+    <div class="col-lg-10 offset-1 justify-content-end d-flex  ">
+      <button  routerLink="/add-user" type="button" class="btn btn-success" style="background-color: #1BA693">Ajouter user</button>    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-3 mt-3" *ngFor="let grcomp of grpcompetence | paginate: { itemsPerPage: 3, currentPage: p}">
+    <app-itemsgrp [ItemgrpeComp]="grcomp" >
+
+    </app-itemsgrp>
+    </div>
+
+
+
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+

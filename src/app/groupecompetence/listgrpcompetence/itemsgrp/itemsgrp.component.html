@@ -1,0 +1,30 @@
+
+
+<script src="itemsgrp.component.ts"></script>
+<div class="card border-success mb-3" style="max-width: 18rem;">
+
+  <div class="card-header d-flex justify-content-between" style="background-color: #008e8e " >
+    <div>
+      <h5>Libelle
+        <hr>
+    <p>{{ItemgrpeComp.libelle}}
+    </p>
+      </h5>
+    </div>
+    <div>
+    <a ><i class="fas fa-pen-square"></i></a>
+    </div>
+
+  </div>
+  <div class="card-body ">
+    <h5 class="card-title">Description</h5>
+    <p class="card-text">{{ItemgrpeComp.description}}</p>
+  </div>
+  <div class="card-footer bg-transparent border-success" *ngFor="let comp of ItemgrpeComp.competences"><h5>{{comp.libelle}}</h5>
+
+  </div>
+</div>
+
+
+
+

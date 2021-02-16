@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+  <div class="col-12">
+<h1>Lister User</h1>
+    <!--<input class="form-control mr-sm-2" type="text" placeholder="Search by username" name="search" aria-label="Search"
+           [(ngModel)]="search" (ngModelChange)="ToSearch()">-->
+    <div>
+      <input class="form-control mr-sm-2" type="text" placeholder="rechercher un utilisateur" name="search" aria-label="Search"
+             [(ngModel)]="search" (ngModelChange)="ToSearch()" >
+
+    </div>
+<hr>
+<button  routerLink="/add-user" type="button" class="btn btn-success" style="background-color: #1BA693">Ajouter user</button>
+<!--<a href=""></a> <i class="fas fa-user-plus"></i>-->
+<table class="table table-striped">
+
+  <thead>
+  <tr  >
+
+    <th scope="col">Avatar</th>
+    <th scope="col">Nom</th>
+    <th scope="col">Prenom</th>
+    <th scope="col">Email</th>
+
+    <th scope="col">telephone</th>
+    <th scope="col">adresse</th>
+    <th scope="col">Type</th>
+   <th class="text-center" scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }">
+  <tr>
+    <th ><img style="width: 80px; height: 60px" src="data:image/jpg;base64,{{user.avatar}}" alt=""></th>
+        <td>{{user.prenom}}</td>
+    <td>{{user.nom}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.Telephone}}</td>
+    <td>{{user.Adresse}}</td>
+    <td>{{user.profil.libelle}}</td>
+    <td class="d-flex d-inline-block">
+      <button routerLink="/edituser/{{user.id}}" style="background-color: #1BA693" class="btn btn-primary mr-2 ">update</button>
+      <button  class="btn btn-danger mr-2 " (click)="redirectToDelete(user.id)">Delete</button>
+      <button style="background-color: #1BA693" routerLink="/detailuser/{{user.id}}" class="btn btn-primary mr-2 ">Detail</button>
+    </td>
+ </tr>
+
+
+
+
+  </tbody>
+</table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+</div>
+</div>
+</div>

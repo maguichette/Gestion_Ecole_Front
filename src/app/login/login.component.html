@@ -1,0 +1,55 @@
+<body >
+<div class="login-page">
+  <div class="form" >
+    <img src="./assets/image/logoSA.png" class="mb-3">
+    <form #formulaire="ngForm" class="login-form mt-3">
+      <span *ngIf="fakeData" class="text-danger">{{errorMessage}}</span>
+      <input email #email="ngModel" ngModel type="email" name="email" id="email" class="form-control" placeholder="example@example" required="">
+     <!-- <span *ngIf="email.invalid && email.touched" class="text-danger">Email is required</span>-->
+      <span class="text-danger" *ngIf="submitted && f.username.errors">
+                  <span *ngIf="f.username.errors.required">Email is required</span>
+            </span>
+
+      <input password #password="ngModel" ngModel type="password" name="password" id="password" class="mt-1 form-control" placeholder="Password" required="">
+
+      <span class="text-danger" *ngIf="submitted && f.password.errors">
+                  <span *ngIf="f.password.errors.required">Password is required</span>
+            </span>
+
+      <button [disabled]="formulaire.invalid" (click)="onSubmit(formulaire.value)" class="btn btn-outline-sonatelgreen shadow rounded">Connexion</button>
+
+    </form>
+  </div>
+</div>
+</body>
+
+<!--
+<body class="d-flex justify-content-center align-items-center">
+&lt;!&ndash; Main Content &ndash;&gt;
+<div class="w-50 h-50 rounded shadow main-content">
+  <div class="bg-sonatelgreen logo d-flex align-items-center justify-content-center">
+    <img src="./assets/images/academy.png">
+  </div>
+  <div class="login_form row d-flex align-items-center justify-content-center">
+
+    <form #formulaire="ngForm" class="w-75">
+
+      <div class="form-group mb-3">
+        <input email #email="ngModel" ngModel type="email" name="email" id="email" class="form-control" placeholder="example@example" required="">
+        <span *ngIf="email.invalid && email.touched" class="text-danger">Email is required</span>
+      </div>
+
+      <div class="form-group mt-4">
+        <input password ngModel type="password" name="password" id="password" class="form-control" placeholder="Password" required="">
+      </div>
+
+      <div class="mt-4 d-flex justify-content-center">
+        <button [disabled]="formulaire.invalid" (click)="login(formulaire.value)" class="btn btn-outline-sonatelgreen shadow rounded">Connexion</button>
+      </div>
+
+      &lt;!&ndash;<div class="mt-4 d-flex justify-content-center text-danger" *ngIf="fakeData"> {{ loginError }} </div>&ndash;&gt;
+
+    </form>
+
+  </div>
+-->

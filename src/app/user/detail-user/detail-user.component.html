@@ -1,0 +1,76 @@
+<app-header></app-header>
+<div class="container">
+<div class="card-group">
+  <div class="card">
+    <div class="row">
+
+   <div class="col-6">
+
+    <img class="card-img-top rounded-circle"  style="width: 25%; height: 200px"src="data:image/jpg;base64,{{user.avatar}}" alt="Card image cap">
+   </div>
+      <div class="col-6">
+     <qrcode [qrdata]="myAngularQrCode" [width]="256" style="float: left"
+            [errorCorrectionLevel]="'M'"></qrcode>
+      </div>
+    </div>
+    <hr>
+
+
+    <div class="card-body">
+     <h5> <p class="card-text text-lowercase text-center">{{user.nom}}</p></h5>
+      <hr>
+     <h5> <p class="card-text text-lowercase text-center"  >{{user.prenom}}</p></h5>
+      <hr>
+      <h5> <p class="card-text text-lowercase text-center" >{{user.email}}</p></h5>
+      <hr>
+      <h5> <p class="card-text text-lowercase text-center" >{{user.Telephone}}</p></h5>
+      <hr>
+      <h5>  <p class="card-text  text-center" >{{user.Adresse}}</p></h5>
+      <hr>
+        <h5> <p class="card-text text-lowercase text-center" >{{user.roles}}</p></h5>
+    </div>
+
+  </div>
+</div>
+<!--<div class="container ">
+  <div class="row">
+    <div class="col-12">-->
+
+
+  <!--<div class="card-body">-->
+   <!-- <h5 class="card-title">Detail User</h5>-->
+   <!-- <div>
+    <ngx-qrcode
+      [elementType]="elementType"
+      [value] = "value"
+      cssClass = "aclass"
+      errorCorrectionLevel = "L">
+    </ngx-qrcode>
+    </div>-->
+ <!-- </div>
+      <div class="" style="border: 1px solid black">-->
+  <!--<ul class="list-group list-group-flush">
+    <li> <img class="card-img-top rounded-circle " style="height: 100px;width: 200px" src="data:image/jpg;base64,{{user.avatar}}" alt="Card image cap"></li>
+    <li class="list-group-item">{{user.nom}}</li>
+    <li class="list-group-item">{{user.prenom}}</li>
+    <li class="list-group-item">{{user.email}}</li>
+    <li class="list-group-item">{{user.Telephone}}</li>
+    <li class="list-group-item">{{user.Adresse}}</li>
+    <li class="list-group-item">{{user.roles}}</li>
+  </ul>-->
+  <!--<div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>-->
+<!--</div>-->
+
+
+<!--<p>detail-user works!</p>
+{{user.nom}}
+{{user.prenom}}
+{{user.email}}
+<img src="data:image/jpg;base64,{{user.avatar}}" alt="">-->
+<!--</div>
+</div>-->
+
+<!--</div>-->

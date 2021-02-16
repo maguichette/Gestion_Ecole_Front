@@ -1,0 +1,39 @@
+<app-header></app-header>
+<h1>Lister Profil de Sortie</h1>
+<hr>
+<form>
+  <div class="row mb-3">
+    <div class="col">
+      <input type="text" class="form-control" placeholder=" ajouter profil de sortie">
+    </div>
+  </div>
+  <button style="background-color: #1BA693" class="" type="submit">Enregistrer</button>
+</form>
+
+<table class="table table-striped">
+
+  <thead>
+  <tr>
+
+    <th scope="col">ID</th>
+    <th scope="col">LIBELLE</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let profilsorti of profilsortis">
+  <tr>
+    <th scope="row">{{profilsorti.id}}</th>
+    <th scope="row">{{profilsorti.libelle}}</th>
+    <td class="">
+      <button routerLink="/editprofilsortie/{{profilsorti.id}}" style="background-color: #1BA693" class="btn btn-primary mr-2">update</button>
+      <button  class="btn btn-danger mr-2">Delete</button>
+
+    </td>
+  </tr>
+
+
+
+
+  </tbody>
+</table>
+
